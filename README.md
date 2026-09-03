@@ -3,6 +3,14 @@
 **Otwarty standard referencyjnej architektury procesowej dla retailu.** ORPR porządkuje domeny,
 procesy, przepływy, odpowiedzialności i styki między obszarami organizacji handlowej.
 
+> [!IMPORTANT]
+> **To jest publiczna próbka ORPR, a nie cały opracowany system.**
+>
+> Repozytorium zawiera mapę procesów i wybrane pełne karty. Pełny zakres obejmuje m.in. wszystkie
+> opracowane karty procesów, regulatory matrix oraz dokumentację warsztatową. Jeśli rozważasz
+> wykorzystanie ORPR i chcesz poznać pełny materiał, skontaktuj się bezpośrednio z Rafałem Myrtą:
+> [myrta.me](https://myrta.me) lub [LinkedIn](https://www.linkedin.com/in/rafalmyrta/).
+
 ## Wydanie v0.1.0
 
 To publiczny snapshot produktu przygotowany z prywatnego repozytorium warsztatowego. Zawiera:
