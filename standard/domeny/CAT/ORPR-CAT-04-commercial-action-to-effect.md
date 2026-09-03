@@ -1,5 +1,10 @@
 # [ORPR-CAT-04] Commercial-Action-to-Effect
 
+> [!NOTE]
+> **Szybka ścieżka:** zacznij od celu biznesowego, granic, właściciela, wejść, wyjść i bramek.
+> Metadane, historia wersji, bank pytań i czerwone flagi dokumentują pochodzenie treści oraz
+> wspierają późniejszy warsztat; nie trzeba ich czytać, aby zrozumieć podstawowy przebieg procesu.
+
 Podtytuł roboczy: od zakończonego działania handlowego do oceny wyniku i wiedzy przydatnej przy projektowaniu kolejnych działań.
 
 | | |

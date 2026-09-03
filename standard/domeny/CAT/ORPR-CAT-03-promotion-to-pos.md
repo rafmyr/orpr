@@ -1,4 +1,10 @@
 # [ORPR-CAT-03] Promotion-to-POS
+
+> [!NOTE]
+> **Szybka ścieżka:** zacznij od celu biznesowego, granic, właściciela, wejść, wyjść i bramek.
+> Metadane, historia wersji, bank pytań i czerwone flagi dokumentują pochodzenie treści oraz
+> wspierają późniejszy warsztat; nie trzeba ich czytać, aby zrozumieć podstawowy przebieg procesu.
+
 Podtytuł roboczy (PL): od decyzji handlowej o promocji do jej aktywacji, obowiązywania i wygaśnięcia w POS oraz kanałach.
 
 | | |

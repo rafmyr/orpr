@@ -1,4 +1,10 @@
 # [ORPR-CAT-02] Price-to-POS
+
+> [!NOTE]
+> **Szybka ścieżka:** zacznij od celu biznesowego, granic, właściciela, wejść, wyjść i bramek.
+> Metadane, historia wersji, bank pytań i czerwone flagi dokumentują pochodzenie treści oraz
+> wspierają późniejszy warsztat; nie trzeba ich czytać, aby zrozumieć podstawowy przebieg procesu.
+
 Podtytuł roboczy (PL): od ustalenia ceny regularnej do jej obowiązywania w kasach, kanałach i na nośniku ceny, aż do zastąpienia albo wygaśnięcia.
 
 | | |

@@ -1,4 +1,10 @@
 # [ORPR-CAT-01] Item-to-Sellable
+
+> [!NOTE]
+> **Szybka ścieżka:** zacznij od celu biznesowego, granic, właściciela, wejść, wyjść i bramek.
+> Metadane, historia wersji, bank pytań i czerwone flagi dokumentują pochodzenie treści oraz
+> wspierają późniejszy warsztat; nie trzeba ich czytać, aby zrozumieć podstawowy przebieg procesu.
+
 Podtytuł roboczy (PL): od decyzji o wprowadzeniu pozycji do asortymentu, przez skompletowanie danych i dopuszczenie do sprzedaży, po wycofanie i zastąpienie następcą.
 
 | | |

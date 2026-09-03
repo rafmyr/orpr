@@ -1,26 +1,14 @@
 # Mapa procesów ORPR (nawigacja)
 
-Status: zatwierdzona przez właściciela 2026-08-31 (przepisanie ze spisu F2b, pozycja długu H16;
-decyzje i przydziały NN: wewnętrzny rejestr decyzji, wpis 2026-08-31 o wydaniu v0.1).
-Poprzednia wersja zatwierdzona 24.08 przy 39 procesach.
+Status: publiczna mapa nawigacyjna wydania `v0.1.x`, zatwierdzona przez właściciela standardu.
+Obejmuje 74 procesy w 22 obszarach oraz jednego kandydata bez nadanego identyfikatora.
 
-To jest warstwa NAWIGACYJNA (spis obszarów i procesów), nie diagram przepływu. Krawędzie handoffu
-(proces → proces), bramki i wywołania procesów przekrojowych powstają w kartach szkieletowych
-(pole 2/8/9) oraz w `standard/mapowania/rejestr-stykow-L0.md`.
+To jest warstwa nawigacyjna: spis obszarów i procesów, a nie diagram kolejności wykonania.
+Przekazania między procesami, bramki i wywołania procesów przekrojowych są opisane w kartach oraz
+w [`rejestrze styków L0`](mapowania/rejestr-stykow-L0.md).
 
-Zastępuje planowany `L0-katalog.md` (README sekcja struktury). freeze notacji: obowiązuje od v0.1.0.
-
-Źródło zawartości: warstwa A wewnętrznego spisu (74 procesy,
-status wierszy PROPOSAL), przypisanie procesu do obszaru wg kolumny `home_id`, nazwa procesu wg
-kolumny `nazwa`. Nazwy obszarów: kanoniczne z wewnętrznego krajobrazu obszarów
-tabela B (#1 do #22). Rodzaj obszarów #1 do #10 zatwierdzony 24.08; rodzaj obszarów #11 do #22
-ratyfikowany 31.08 (wszystkie przekrojowe z dwoma wyjątkami: #13 i #14 to Przepływy biznesowe).
-Stara struktura 10 domen (CAT, SAL...) = checklista pokrycia i stałe ID techniczne, NIE struktura
-nawigacyjna (P13, MAPA-NOTACJI DEPRECATED jako struktura).
-
-Referencja wizualna notacji: `standard/mapa-procesow-prototyp.html` (układ, dwie kategorie, semantyka
-linii; ilustracyjny, nie jest dowodem prawdziwości narysowanych sekwencji; pokazuje układ 39 procesów
-zatwierdzony 24.08, sprzed przepisania).
+Notacja identyfikatorów jest zamrożona od `v0.1.0`. Kody domen, takie jak `CAT` i `SAL`, są częścią
+stabilnego identyfikatora technicznego; obszary poniżej służą do nawigacji biznesowej.
 
 ## A. Zasady notacji
 
@@ -33,17 +21,13 @@ rodzaj ∈ { Przepływ, Proces przekrojowy }
 
 Reguły:
 
-1. Obszar identyfikujemy NAZWĄ, nie numerem. Adres numeryczny obszaru (wariant `1.01`, `3.04`)
-   został odrzucony: wymaga klucza, żeby wiedzieć czym jest obszar 3, i łamie samowyjaśnialność
-   (rejestr decyzji projektowych 2026-08-24). Kanoniczny adres czytelny dla człowieka: `Zakupy i płatności dla
-   dostawców / 01`, `Planowanie i dostępność / 03`, `Zapas / 01`, `Księgowość / 01`.
+1. Obszar identyfikujemy nazwą, nie numerem. Dzięki temu adres jest czytelny bez dodatkowego klucza,
+   np. `Zakupy i płatności dla dostawców / 01` albo `Księgowość / 01`.
 2. `NN` to dwucyfrowy numer porządkowy w obszarze, NIE krok sekwencji. Nadawany zgodnie
    z naturalną kolejnością tam, gdzie istnieje. Kolejność wykonania pokazują strzałki i handoffy,
    nie numer.
 3. Nazwa procesu ma formę zdania `Od X do Y` (np. `Od zapotrzebowania do zamówienia`). Strzałka `→`
-   jest zarezerwowana dla JEDNEGO znaczenia: przekazanie między procesami na diagramie. Dlatego
-   strzałka NIE występuje wewnątrz nazwy procesu (decyzja 2026-08-24 zastępująca wcześniejszą
-   formę `X → Y`; freeze notacji obowiązuje od v0.1.0).
+   oznacza wyłącznie przekazanie między procesami, dlatego nie występuje wewnątrz nazwy procesu.
 4. Proces ma jedno miejsce główne na mapie; inne obszary linkują, nie duplikują.
 5. Stałe ID techniczne (`ORPR-CAT-04`, na mapie skrót `CAT-04`) jest stabilne — przeniesienie
    procesu między obszarami go NIE zmienia. To NIE jest alias historyczny: to trwały identyfikator
@@ -52,10 +36,10 @@ Reguły:
 6. Kody bytów (`LEX`, `SFT`, `FIN`...) NIE wchodzą do ścieżki nawigacyjnej; żyją w modelu
    technicznym (rejestr styków), na mapie najwyżej jako opcjonalny tag.
 7. Kandydat bez zatwierdzonej granicy nie dostaje numeru ani stałego ID: `Kandydat · <nazwa>`.
-8. Dwie kategorie procesów: „Przepływy biznesowe" i „Procesy przekrojowe"; w ścieżce rodzaj to
-   „Przepływ" albo „Proces przekrojowy". Nazewnictwo „Pas I / Pas II" wycofane (decyzja 2026-08-24).
-9. Po freeze stałe ID techniczne są NIEZMIENNE (zmiana = decyzja rangi wydania, z deprecation).
-   Freeze notacji PENDING.
+8. Dwie kategorie procesów to „Przepływy biznesowe" i „Procesy przekrojowe"; w ścieżce rodzaj to
+   „Przepływ" albo „Proces przekrojowy".
+9. Stałe ID techniczne są niezmienne od `v0.1.0`. Zmiana wymaga nowego wydania i jawnego oznaczenia
+   wycofywanego identyfikatora.
 
 Trójpodział znaczeń (sedno czytelności):
 
@@ -67,10 +51,9 @@ Trójpodział znaczeń (sedno czytelności):
 
 ## B. Mapa procesów
 
-Adres czytelny dla człowieka = nazwa obszaru (nagłówek) + `NN` przy procesie. Skrót w nawiasie
-po nazwie to stałe ID techniczne (na mapie bez prefiksu `ORPR-`). Znacznik `(#n)` przy nagłówku
-obszaru to odsyłacz techniczny do krajobrazu v0.11 tabela B i kolumny `home_id` spisu F2b;
-nie jest częścią adresu nawigacyjnego (reguła 1 bez zmian).
+Adres czytelny dla człowieka składa się z nazwy obszaru i `NN` przy procesie. Skrót w nawiasie po
+nazwie to stałe ID techniczne bez prefiksu `ORPR-`. Znacznik `(#n)` przy nagłówku jest numerem
+porządkowym obszaru w tym wydaniu i nie jest częścią adresu nawigacyjnego.
 
 ### Przepływy biznesowe
 
@@ -90,12 +73,12 @@ nie jest częścią adresu nawigacyjnego (reguła 1 bez zmian).
 
 **Oferta handlowa** (#3)
 - 01 Od pozycji do dopuszczenia do sprzedaży · `CAT-01`
-- 02 Od ceny do kasy · `CAT-02` *(wydana, v1.0)*
+- 02 Od ceny do kasy · `CAT-02` *(status: `released`)*
 - 03 Od promocji do kasy · `CAT-03`
 - 04 Od akcji handlowej do efektu · `CAT-04`
 
 **Realizacja sprzedaży** (#4)
-- 01 Od koszyka do sprzedaży · `SAL-01` *(wydana, v1.0)*
+- 01 Od koszyka do sprzedaży · `SAL-01` *(status: `released`)*
 - 02 Od sprzedaży do dokumentu fiskalnego · `SAL-02`
 - 03 Od sprzedaży do wydania towaru · `SAL-03`
 
@@ -160,10 +143,8 @@ nie jest częścią adresu nawigacyjnego (reguła 1 bez zmian).
 - 01 Od kontaktu z klientem do mierzalnej relacji · `CRM-01`
 - 02 Od celu komunikacyjnego do zmierzonego efektu kampanii · `MKT-01`
 - 03 Od potrzeby marki do zatwierdzonego standardu · `BRD-01`
-- Kandydat · Program lojalnościowy: naliczanie i umarzanie punktów *(bez numeru i bez stałego ID
-  do zatwierdzenia początku, wyniku i granicy)* **[AUT-R 2026-08-31]**: kandydat przeniesiony
-  z obszaru Płatności klientów do #15 na podstawie krajobrazu v0.11 tabela B #15 („program
-  lojalnościowy = proces warunkowy tego obszaru, styki #5/#8").
+- Kandydat · Program lojalnościowy: naliczanie i umarzanie punktów *(bez numeru i stałego ID do
+  czasu zatwierdzenia początku, wyniku i granicy procesu)*.
 
 **Operacje i utrzymanie lokalizacji** (#16)
 - 01 Od uzupełnienia do półki · `INV-05`
@@ -200,8 +181,7 @@ nie jest częścią adresu nawigacyjnego (reguła 1 bez zmian).
 
 ## C. Kontrola liczb
 
-Liczby przeliczone z sekcji B tego pliku (nie przepisane ze spisu), a następnie porównane
-z kolumną `spisane` rejestru jednostek spisu F2b: pełna zgodność per obszar, 22 na 22.
+Liczby poniżej wynikają bezpośrednio z sekcji B tego pliku.
 
 - Przepływy biznesowe (8 obszarów): 5 + 5 + 4 + 3 + 3 + 4 + 2 + 1 = **27 procesów**
   (#1: 5, #2: 5, #3: 4, #4: 3, #5: 3, #6: 4, #13: 2, #14: 1).
@@ -209,15 +189,12 @@ z kolumną `spisane` rejestru jednostek spisu F2b: pełna zgodność per obszar,
   **47 procesów** (#7: 7, #8: 3, #9: 4, #10: 4, #11: 5, #12: 2, #15: 3, #16: 2, #17: 2, #18: 3,
   #19: 3, #20: 3, #21: 2, #22: 4).
 - Razem: **74 istniejące + 1 kandydat** (program lojalnościowy, obszar #15).
-- Zgodność ze spisem F2b: 74 wiersze warstwy A = 74 procesy na mapie, zero wierszy pominiętych,
-  zero dodanych (kontrola diff posortowanych list `process_id`, 2026-08-31).
-- Kandydat lojalnościowy = nowa treść (brak w kamieniołomie); wymaga początku, wyniku i granicy
+- Kandydat lojalnościowy wymaga początku, wyniku i granicy
   wobec Oferty handlowej / Realizacji sprzedaży / Płatności klientów zanim dostanie numer.
 
 ## D. Znaczenie linii i układ mapy (semantyka wizualna)
 
-Reguły wizualne mapy i diagramów obszarówych (spójne z decyzją o reprezentacji diagramu,
-rejestr decyzji projektowych 2026-08-24):
+Reguły wizualne dla diagramów obszarów:
 
 1. Linia ciągła — przekazanie POTWIERDZONE w karcie procesu (pole 2 „komu oddaje pałeczkę").
 2. Linia przerywana — propozycja przekazania WYMAGAJĄCA walidacji (hipoteza z silnika/rejestru styków).
@@ -230,22 +207,15 @@ rejestr decyzji projektowych 2026-08-24):
 6. Bez rombów BPMN i bez swimlane'ów po bytach. Mapa pozostaje na poziomie proces–proces i ma być
    czytelna bez klucza domen.
 
-Do potwierdzenia w kartach (obecnie WYŁĄCZNIE propozycje na prototypie, nie fakty): sekwencje
-`Zakup do zapłaty 01→02→03→04` (proces 05 bez linii); `Plan i dostępność 03→01→04→05`
-(procesy 02 i 06 bez linii); `Oferta handlowa 01→02/03` (proces 04 bez linii);
-`Realizacja sprzedaży 01→02/03`; `Płatności 01→02→03`; `Zwrot 01` jako osobna ścieżka,
-`02→03/04`. Docelowa mapa dowodowa jest generowana z pola przekazania w kartach; prototyp notacji
-i mapa dowodowa to dwa odrębne artefakty.
-
-Powyższe sekwencje odnoszą się do stanu mapy z 24.08 (stare nazwy obszarów i ówczesne numery NN,
-m.in. INV-05 jako `Plan i dostępność / 05`) i po przepisaniu mapy wymagają przeglądu (nota operatora 2026-08-31, przegląd przy kartach szkieletowych).
+Ta mapa nie rysuje sekwencji. Potwierdzone i proponowane przekazania można analizować w opisach
+przepływów oraz w rejestrze styków L0.
 
 ## E. Relacja do modelu technicznego
 
-- Byty L0 (16), styki (STK-01..44), projekcje ⊗: `standard/mapowania/rejestr-stykow-L0.md` v1.0.
+- Byty L0 (16), styki (`STK-01..44`) i projekcje opisuje
+  [`rejestr styków L0`](mapowania/rejestr-stykow-L0.md).
 - Karta procesu wiąże się z bytami po NAZWIE w polu uczestników; kody bytów nie wchodzą do ścieżki.
-- Diagram przepływu per obszar (proces → proces, bramki, wywołania procesów przekrojowych) powstaje przy
-  kartach szkieletowych Etapu B, zaczynając od „Zakup do zapłaty" (protokół P2P gotowy w rejestrze,
-  sekcja C.6).
+- Opisy przepływów łączą procesy, bramki i wywołania procesów przekrojowych na poziomie
+  odpowiednim dla publicznego wydania.
 
 ---
