@@ -7,8 +7,11 @@ procesy, przepływy, odpowiedzialności i styki między obszarami organizacji ha
 > **To jest publiczna próbka ORPR, a nie cały opracowany system.**
 >
 > Repozytorium zawiera mapę procesów i wybrane pełne karty. Pełny zakres obejmuje m.in. wszystkie
-> opracowane karty procesów, regulatory matrix oraz dokumentację warsztatową. Jeśli rozważasz
-> wykorzystanie ORPR i chcesz poznać pełny materiał, skontaktuj się bezpośrednio z Rafałem Myrtą:
+> opracowane karty procesów, dokumentację warsztatową oraz **Regulatory Matrix** — osobne,
+> wersjonowane repozytorium wymagań regulacyjnych dla systemów POS/ERP. Łączy ono testowalne
+> reguły z konkretnymi źródłami prawa i scenariuszami weryfikacyjnymi, aby wskazać, jakie obowiązki
+> dotyczą danego procesu lub funkcji. Jeśli rozważasz wykorzystanie ORPR i chcesz poznać pełny
+> materiał, skontaktuj się bezpośrednio z Rafałem Myrtą:
 > [myrta.me](https://myrta.me) lub [LinkedIn](https://www.linkedin.com/in/rafalmyrta/).
 
 ## Wydanie v0.1.0
@@ -21,7 +24,7 @@ To publiczny snapshot produktu przygotowany z prywatnego repozytorium warsztatow
 - szablony kart, licencje, znane ograniczenia, manifest integralności i informację o pochodzeniu.
 
 Nie zawiera warsztatowych rejestrów decyzji, materiałów recenzyjnych, danych adopterów,
-prywatnej struktury regulatory-matrix ani historii prywatnego repozytorium.
+prywatnej zawartości Regulatory Matrix ani historii prywatnego repozytorium.
 
 ## Od czego zacząć
 
