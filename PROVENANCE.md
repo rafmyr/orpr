@@ -1,16 +1,14 @@
 # Provenance
 
-Artifact: ORPR v0.1 — mapa nawigacyjna.
-Build format: 1.
+Public mirror release: ORPR `v0.1.0`.
 
-The package was built from this closed source mapping:
+Source release commit: `98a44cc6364637c123d9f9cec8b9479725b42def`.
 
-- `ops/gpt/2026-09-01-sanityzacja-i-artefakt-v0.1/artifact-src/README.md` → `README.md`
-- `ops/gpt/2026-09-01-sanityzacja-i-artefakt-v0.1/artifact-src/KNOWN-LIMITATIONS.md` → `KNOWN-LIMITATIONS.md`
-- `LICENSE` → `LICENSE`
-- `LICENSE-CONTENT` → `LICENSE-CONTENT`
-- `LICENSING.md` → `LICENSING.md`
-- `standard/mapa-procesow.md` → `standard/mapa-procesow.md`
+Source product artifact SHA-256:
+`11d716d6e965f437408b0d8154b87d71eeea524613ca91b987facf225faa15f2`.
 
-Every repository path not listed above is excluded by default.
-Integrity hashes are recorded in `MANIFEST.sha256`.
+The mirror was seeded from the deterministic 36-file product artifact. References to private
+workshop paths were replaced with public descriptions, and the root README and known-limitations
+document were adapted for the standalone public repository. No private Git history was copied.
+
+Integrity hashes for the resulting public snapshot are recorded in `MANIFEST.sha256`.

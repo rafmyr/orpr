@@ -1,18 +1,18 @@
 # Mapa procesów ORPR (nawigacja)
 
 Status: zatwierdzona przez właściciela 2026-08-31 (przepisanie ze spisu F2b, pozycja długu H16;
-decyzje i przydziały NN: governance/DECISION-LOG.md, wpis 2026-08-31 o wydaniu v0.1).
+decyzje i przydziały NN: wewnętrzny rejestr decyzji, wpis 2026-08-31 o wydaniu v0.1).
 Poprzednia wersja zatwierdzona 24.08 przy 39 procesach.
 
 To jest warstwa NAWIGACYJNA (spis obszarów i procesów), nie diagram przepływu. Krawędzie handoffu
 (proces → proces), bramki i wywołania procesów przekrojowych powstają w kartach szkieletowych
 (pole 2/8/9) oraz w `standard/mapowania/rejestr-stykow-L0.md`.
 
-Zastępuje planowany `L0-katalog.md` (README sekcja struktury). Freeze notacji: PENDING.
+Zastępuje planowany `L0-katalog.md` (README sekcja struktury). freeze notacji: obowiązuje od v0.1.0.
 
-Źródło zawartości: warstwa A spisu `ops/F2b/SPIS-CALOSCI-F2b-v1.0-2026-08-28.md` (70 procesów,
+Źródło zawartości: warstwa A wewnętrznego spisu (74 procesy,
 status wierszy PROPOSAL), przypisanie procesu do obszaru wg kolumny `home_id`, nazwa procesu wg
-kolumny `nazwa`. Nazwy obszarów: kanoniczne z krajobrazu `ops/KRAJOBRAZ-OBSZAROW-v0.11-2026-08-26.md`
+kolumny `nazwa`. Nazwy obszarów: kanoniczne z wewnętrznego krajobrazu obszarów
 tabela B (#1 do #22). Rodzaj obszarów #1 do #10 zatwierdzony 24.08; rodzaj obszarów #11 do #22
 ratyfikowany 31.08 (wszystkie przekrojowe z dwoma wyjątkami: #13 i #14 to Przepływy biznesowe).
 Stara struktura 10 domen (CAT, SAL...) = checklista pokrycia i stałe ID techniczne, NIE struktura
@@ -35,7 +35,7 @@ Reguły:
 
 1. Obszar identyfikujemy NAZWĄ, nie numerem. Adres numeryczny obszaru (wariant `1.01`, `3.04`)
    został odrzucony: wymaga klucza, żeby wiedzieć czym jest obszar 3, i łamie samowyjaśnialność
-   (DECISION-LOG 2026-08-24). Kanoniczny adres czytelny dla człowieka: `Zakupy i płatności dla
+   (rejestr decyzji projektowych 2026-08-24). Kanoniczny adres czytelny dla człowieka: `Zakupy i płatności dla
    dostawców / 01`, `Planowanie i dostępność / 03`, `Zapas / 01`, `Księgowość / 01`.
 2. `NN` to dwucyfrowy numer porządkowy w obszarze, NIE krok sekwencji. Nadawany zgodnie
    z naturalną kolejnością tam, gdzie istnieje. Kolejność wykonania pokazują strzałki i handoffy,
@@ -43,7 +43,7 @@ Reguły:
 3. Nazwa procesu ma formę zdania `Od X do Y` (np. `Od zapotrzebowania do zamówienia`). Strzałka `→`
    jest zarezerwowana dla JEDNEGO znaczenia: przekazanie między procesami na diagramie. Dlatego
    strzałka NIE występuje wewnątrz nazwy procesu (decyzja 2026-08-24 zastępująca wcześniejszą
-   formę `X → Y`; freeze notacji nadal PENDING).
+   formę `X → Y`; freeze notacji obowiązuje od v0.1.0).
 4. Proces ma jedno miejsce główne na mapie; inne obszary linkują, nie duplikują.
 5. Stałe ID techniczne (`ORPR-CAT-04`, na mapie skrót `CAT-04`) jest stabilne — przeniesienie
    procesu między obszarami go NIE zmienia. To NIE jest alias historyczny: to trwały identyfikator
@@ -79,7 +79,7 @@ nie jest częścią adresu nawigacyjnego (reguła 1 bez zmian).
 - 02 Od dokumentu dostawy do przyjęcia · `PRC-02`
 - 03 Od faktury do zobowiązania · `PRC-03`
 - 04 Od zobowiązania do zapłaty · `FIN-04`
-- 05 Od warunków handlowych do rozliczenia rabatów retro · `PRC-04`
+- 05 Od warunków handlowych do rozliczenia korzyści pozafakturowych · `PRC-04`
 
 **Planowanie i dostępność** (#2)
 - 01 Od popytu do zapotrzebowania netto · `DEM-01`
@@ -148,6 +148,9 @@ nie jest częścią adresu nawigacyjnego (reguła 1 bez zmian).
 **Zarządzanie asortymentem i dostawcami** (#11)
 - 01 Od potrzeby pozyskania do warunków handlowych · `SUP-01`
 - 02 Od potrzeby zmiany asortymentu do decyzji i danych produktu · `AST-01`
+- 03 Od kierunku do strategii kategorii · `AST-02`
+- 04 Od zobowiązań dostawcy do pełnego rozliczenia · `SUP-02`
+- 05 Od potrzeby ekspozycji do planu przestrzeni i ekspozycji · `AST-03`
 
 **Logistyka sieci** (#12)
 - 01 Od zlecenia transportu do potwierdzonego odbioru · `LOG-01`
@@ -193,6 +196,7 @@ nie jest częścią adresu nawigacyjnego (reguła 1 bez zmian).
 - 01 Od potrzeby ustalenia kierunku do zatwierdzonych celów i decyzji · `GOV-01`
 - 02 Od informacji o wynikach i ryzykach do zamkniętego przeglądu zarządczego · `GOV-02`
 - 03 Od potrzeby relacji z interesariuszami do zrealizowanych obowiązków relacyjnych · `GOV-03`
+- 04 Od strategii i szans rozwojowych do zweryfikowanego portfela rozwoju · `GOV-04`
 
 ## C. Kontrola liczb
 
@@ -201,19 +205,19 @@ z kolumną `spisane` rejestru jednostek spisu F2b: pełna zgodność per obszar,
 
 - Przepływy biznesowe (8 obszarów): 5 + 5 + 4 + 3 + 3 + 4 + 2 + 1 = **27 procesów**
   (#1: 5, #2: 5, #3: 4, #4: 3, #5: 3, #6: 4, #13: 2, #14: 1).
-- Procesy przekrojowe (14 obszarów): 7 + 3 + 4 + 4 + 2 + 2 + 3 + 2 + 2 + 3 + 3 + 3 + 2 + 3 =
-  **43 procesy** (#7: 7, #8: 3, #9: 4, #10: 4, #11: 2, #12: 2, #15: 3, #16: 2, #17: 2, #18: 3,
-  #19: 3, #20: 3, #21: 2, #22: 3).
-- Razem: **70 istniejących + 1 kandydat** (program lojalnościowy, obszar #15).
-- Zgodność ze spisem F2b: 70 wierszy warstwy A = 70 procesów na mapie, zero wierszy pominiętych,
+- Procesy przekrojowe (14 obszarów): 7 + 3 + 4 + 4 + 5 + 2 + 3 + 2 + 2 + 3 + 3 + 3 + 2 + 4 =
+  **47 procesów** (#7: 7, #8: 3, #9: 4, #10: 4, #11: 5, #12: 2, #15: 3, #16: 2, #17: 2, #18: 3,
+  #19: 3, #20: 3, #21: 2, #22: 4).
+- Razem: **74 istniejące + 1 kandydat** (program lojalnościowy, obszar #15).
+- Zgodność ze spisem F2b: 74 wiersze warstwy A = 74 procesy na mapie, zero wierszy pominiętych,
   zero dodanych (kontrola diff posortowanych list `process_id`, 2026-08-31).
 - Kandydat lojalnościowy = nowa treść (brak w kamieniołomie); wymaga początku, wyniku i granicy
   wobec Oferty handlowej / Realizacji sprzedaży / Płatności klientów zanim dostanie numer.
 
 ## D. Znaczenie linii i układ mapy (semantyka wizualna)
 
-Reguły wizualne mapy i diagramów obszarowych (spójne z decyzją o reprezentacji diagramu,
-DECISION-LOG 2026-08-24):
+Reguły wizualne mapy i diagramów obszarówych (spójne z decyzją o reprezentacji diagramu,
+rejestr decyzji projektowych 2026-08-24):
 
 1. Linia ciągła — przekazanie POTWIERDZONE w karcie procesu (pole 2 „komu oddaje pałeczkę").
 2. Linia przerywana — propozycja przekazania WYMAGAJĄCA walidacji (hipoteza z silnika/rejestru styków).
