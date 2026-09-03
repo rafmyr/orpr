@@ -1,5 +1,10 @@
 # [ORPR-SAL-01] Basket-to-Sale
 
+> [!NOTE]
+> **Szybka ścieżka:** zacznij od celu biznesowego, granic, właściciela, wejść, wyjść i bramek.
+> Metadane, historia wersji, bank pytań i czerwone flagi dokumentują pochodzenie treści oraz
+> wspierają późniejszy warsztat; nie trzeba ich czytać, aby zrozumieć podstawowy przebieg procesu.
+
 | | |
 |---|---|
 | ID | ORPR-SAL-01 |
@@ -337,4 +342,4 @@ F15. `[D: typ-finalizacji]` oznaczający zamówienie oczekujące jest wykazywany
 4. ARTS Retail Data Model 7.3, TenderLineItem: https://www.omg.org/retail-depository/arts-odm-73/%7B2B6FA1B6-5860-42C7-BBC1-A122C059B2CE%7D%2B00000000.html
 5. Microsoft Dynamics 365 Commerce, Suspend and recall transactions: https://learn.microsoft.com/en-us/dynamics365/commerce/pos-suspend-recall-transactions
 6. GS1, 2D Barcodes at Retail Point-of-Sale, release 1.1.0: https://ref.gs1.org/guidelines/2d-in-retail/
-7. Regulatory matrix consumer package: https://github.com/rafmyr/regulatory-matrix/tree/main/consumer
+7. Regulatory Matrix: osobny prywatny komponent; [kontakt w sprawie dostępu](https://myrta.me).

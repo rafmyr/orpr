@@ -1,43 +1,67 @@
-# standard/ — treść ORPR
+# Jak korzystać ze standardu ORPR
 
-Struktura docelowa (wypełniana od Etapu 0):
+Katalog `standard/` zawiera publiczną część Open Retail Process Reference. Najlepiej zacząć od
+pytania, na które chcesz odpowiedzieć:
 
+| Potrzeba | Punkt wejścia |
+|---|---|
+| zobaczyć cały krajobraz procesów | [Mapa 74 procesów](mapa-procesow.md) |
+| przeczytać pełną kartę procesu | [Rejestr opublikowanych kart](KARTY-PROCESOW.md) |
+| prześledzić przepływ między procesami | katalog [`przeplywy/`](przeplywy/) |
+| sprawdzić wariant organizacyjny | [Modele operacyjne](mapowania/modele-operacyjne.md) |
+| zobaczyć styki i pokrycie modelu | katalog [`mapowania/`](mapowania/) |
+| zobaczyć przykład nakładki sektorowej | katalog [`profile/pharmacy/`](profile/pharmacy/) |
+
+## Co zawiera publiczna próbka
+
+- mapę 74 procesów w 22 obszarach oraz jednego kandydata;
+- sześć pełnych kart procesów z obszarów oferty handlowej i realizacji sprzedaży;
+- dziesięć opisów przepływów oraz mapowania i przykładowe profile;
+- dwa szablony: skróconej karty standardowej i karty pogłębionej.
+
+Pozostałe opracowane karty oraz Regulatory Matrix nie są częścią publicznego repozytorium.
+Informacja o pełnym zakresie i kontakt znajdują się w [głównym README](../README.md).
+
+## Notacja
+
+Każdy proces ma stabilny identyfikator techniczny:
+
+```text
+ORPR-<KOD DOMENY>-<NN>
 ```
-standard/
-  L0-katalog.md               mapa domen i value streams, jedna strona
-  domeny/
-    <DOMENA>/
-      karta-domeny.md         po co, granice, powiązania
-      ORPR-<DOM>-<NN>-*.md    karty procesów L1 (+ bank pytań analityka)
-      bezpieczniki-R.md       wymogi regulacyjne (link do regulatory-matrix, wersja+as_of)
-      L2/                     scenariusze i kroki — TYLKO wg popytu (pułapka P1)
-  profile/
-    pharmacy/                 nakładka apteczna (pierwsza)
-  agent-pack/                 eksport strukturalny per moduł (dla agentów AI)
+
+Przykład: `ORPR-SAL-01`. Na mapie prefiks `ORPR-` jest pomijany i proces występuje jako `SAL-01`.
+Identyfikator nie zmienia się, gdy proces zostaje przeniesiony do innego obszaru mapy.
+
+Adres nawigacyjny ma postać:
+
+```text
+<rodzaj> / <obszar> / <NN> · <od czego do czego> · <ID>
 ```
 
-## Notacja (freeze: PENDING — do decyzji właściciela przed wydaniem 0.x)
+`NN` jest numerem porządkowym w obszarze, a nie krokiem procesu. Kolejność wykonania wynika z
+opisanych przekazań i przepływów, nie z numerów.
 
-Dwie warstwy, rozdzielone (decyzja 2026-08-24, rejestr decyzji projektowych):
+Notacja identyfikatorów jest zamrożona od wydania `v0.1.0`. Jej zmiana wymaga nowego wydania i
+jawnego oznaczenia wycofywanego identyfikatora.
 
-**1. Alias techniczny (stabilny obiekt standardu).**
-- Proces: `ORPR-<KOD DOMENY 3 lit.>-<NN>` np. ORPR-SAL-01. Na mapie skrót bez prefiksu: `SAL-01`.
-- Dokument: `ORPR-DOC-<nazwa>` | Reguła: `ORPR-BR-<nazwa>` | Scenariusz: `ORPR-SCN-<...>`
-- Alias jest stabilny: przeniesienie procesu między obszarami go NIE zmienia.
-- Po freeze identyfikatory są NIEZMIENNE (zmiana = decyzja rangi wydania, z deprecation).
+## Jak czytać karty
 
-**2. Ścieżka nawigacyjna (gdzie proces jest na aktualnej mapie).**
-- Gramatyka: `<rodzaj> / <obszar> / <NN> · <początek → wynik> · <alias>`, rodzaj ∈ {Przepływ, Wspólne}.
-- Obszar identyfikowany NAZWĄ, nie numerem. `NN` = numer porządkowy w obszarze, nie krok sekwencji.
-- Kody bytów (LEX/SFT/FIN) NIE wchodzą do ścieżki (żyją w rejestrze styków).
-- Pełna mapa i reguły: `standard/mapa-procesow.md`. Kody domen jako checklista pokrycia: `standard/mapa-procesow.md` (DEPRECATED jako struktura, P13).
+Najpierw przeczytaj: cel biznesowy, granice, właściciela, wyzwalacze, wejścia, wyjścia i bramki.
+Bank pytań oraz czerwone flagi służą późniejszemu warsztatowi analitycznemu. Metadane i klasy
+źródeł zachowują ślad pochodzenia twierdzeń:
 
-## Zasady treści
+- `[AUT-R]` — potwierdzona wiedza właściciela standardu;
+- `[PROP+]` — przyjęta propozycja redakcyjna;
+- `[LIT]` — źródło publiczne z lokatorem;
+- `[R: ID]` — powiązanie z wymaganiem Regulatory Matrix;
+- `[HIP]`, `[do potwierdzenia]`, `[do weryfikacji]` — treść, której nie należy traktować jako
+  potwierdzonego faktu lub wymagania prawnego.
 
-1. Każde twierdzenie nieoczywiste ma klasę źródła: [LIT: pozycja, wersja, lokator — bez
-   reprodukcji treści] albo [AUT: R. Myrta + jedno zdanie uzasadnienia z praktyki].
-2. Zero materiałów klientów/pracodawców (clean-room, zasady governance projektu D5). Deklaracja clean-room
-   w karcie każdego modułu, z datą.
-3. Bezpieczniki prawne: pokryte → link do RM; niepokryte → jawne „R: pending".
-4. Język: PL do wydania dla pierwszego adoptera; EN od publikacji (zasady governance projektu, fazy).
-5. Sektorowa neutralność rdzenia: karta w `domeny/` jest branżowo neutralna; treść sektorowa (produkty, ustawy branżowe) wyłącznie w `profile/<branża>/` i bezpiecznikach R. Pułapka P15.
+## Zasady publicznej treści
+
+1. Rdzeń procesu jest neutralny sektorowo; treść sektorowa trafia do `profile/`.
+2. Materiał powstaje w trybie clean-room, bez danych klientów i pracodawców.
+3. Regulatory Matrix wspiera analizę, ale nie jest opinią prawną ani certyfikatem zgodności.
+4. Językiem źródłowym bieżącego wydania jest polski.
+5. Ograniczenia wydania są opisane w [`ZNANE-OGRANICZENIA.md`](../ZNANE-OGRANICZENIA.md).

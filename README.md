@@ -14,7 +14,7 @@ procesy, przepływy, odpowiedzialności i styki między obszarami organizacji ha
 > materiał, skontaktuj się bezpośrednio z Rafałem Myrtą:
 > [myrta.me](https://myrta.me) lub [LinkedIn](https://www.linkedin.com/in/rafalmyrta/).
 
-## Wydanie v0.1.0
+## Wydanie v0.1.x
 
 To publiczny snapshot produktu przygotowany z prywatnego repozytorium warsztatowego. Zawiera:
 
@@ -31,9 +31,10 @@ prywatnej zawartości Regulatory Matrix ani historii prywatnego repozytorium.
 1. [Mapa procesów](standard/mapa-procesow.md)
 2. [Opis standardu i notacji](standard/README.md)
 3. [Znane ograniczenia](ZNANE-OGRANICZENIA.md)
-4. [Rejestr opublikowanych kart](standard/mapowania/REJESTR-STANDARDOW.md)
+4. [Rejestr opublikowanych kart](standard/KARTY-PROCESOW.md)
+5. [Pytania, pomysły i przykłady zastosowań](https://github.com/rafmyr/orpr/discussions)
 
-Wersja `v0.1.0` jest wydaniem wczesnym. Mapa procesu nie zastępuje analizy konkretnej organizacji,
+Seria `v0.1.x` jest wydaniem wczesnym. Mapa procesu nie zastępuje analizy konkretnej organizacji,
 a materiał nie stanowi porady prawnej, podatkowej ani księgowej.
 
 ## Licencje i cytowanie
@@ -44,6 +45,6 @@ a materiał nie stanowi porady prawnej, podatkowej ani księgowej.
 
 Sugerowane cytowanie:
 
-> Open Retail Process Reference (ORPR) v0.1.0, Rafał Myrta, 2026.
+> Open Retail Process Reference (ORPR), użyta wersja wydania, Rafał Myrta, 2026.
 
 Autor i właściciel: Rafał Myrta.
