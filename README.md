@@ -43,6 +43,8 @@ a materiał nie stanowi porady prawnej, podatkowej ani księgowej.
 - treść standardu: Creative Commons BY-SA 4.0 (`LICENSE-CONTENT`);
 - kod i narzędzia: Apache License 2.0 (`LICENSE`);
 - szczegóły: [LICENSING.md](LICENSING.md).
+- Machine-readable dataset: [https://huggingface.co/datasets/rafmyr/orpr](https://huggingface.co/datasets/rafmyr/orpr)
+- Concept DOI: [https://doi.org/10.5281/zenodo.22304798](https://doi.org/10.5281/zenodo.22304798)
 
 Sugerowane cytowanie:
 
