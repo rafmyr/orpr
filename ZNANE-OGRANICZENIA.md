@@ -4,10 +4,12 @@ Ten dokument wyznacza granice pierwszego publicznego snapshotu ORPR.
 
 1. **To wydanie wczesne.** Struktura standardu jest użyteczna do nawigacji, analizy i dalszego
    projektowania, ale nie jest jeszcze kompletnym katalogiem wdrożeniowym.
-2. **Mapa jest szersza niż zbiór pełnych kart.** Mapa obejmuje 74 procesy w 22 obszarach oraz
-   jednego kandydata, natomiast snapshot zawiera sześć pełnych kart L1 w domenach CAT i SAL.
-3. **Nazwa procesu nie jest jego definicją.** Dla procesów bez opublikowanej karty mapa nie
-   przesądza kompletnego zakresu, wyzwalaczy, wejść, wyjść, odpowiedzialności ani kontroli.
+2. **Większość kart jest pokazana w skrócie.** Mapa obejmuje 74 procesy w 22 obszarach oraz
+   jednego kandydata. Snapshot zawiera publiczny opis każdego procesu: 68 skrótów i sześć pełnych
+   kart. Pełne wersje pozostałych 68 kart pozostają poza publicznym repozytorium.
+3. **Skrót procesu nie jest pełną definicją.** Publiczny skrót pokazuje cel, granicę, typowego
+   właściciela i przykładowe pytania oraz ryzyka. Nie przesądza kompletnego zestawu wyzwalaczy,
+   wejść, wyjść, reguł, wyjątków ani kontroli opisanych w pełnej karcie.
 4. **Część relacji pozostaje hipotezą roboczą.** Linie przerywane i jawne oznaczenia założeń
    wymagają walidacji w konkretnych modelach operacyjnych.
 5. **Modele operacyjne są kontekstowe.** Nie każdy proces występuje w każdym typie biznesu;
