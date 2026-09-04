@@ -6,7 +6,7 @@ pytania, na które chcesz odpowiedzieć:
 | Potrzeba | Punkt wejścia |
 |---|---|
 | zobaczyć cały krajobraz procesów | [Mapa 74 procesów](mapa-procesow.md) |
-| przeczytać pełną kartę procesu | [Rejestr opublikowanych kart](KARTY-PROCESOW.md) |
+| znaleźć pełną kartę albo publiczny skrót | [Katalog 74 kart](KARTY-PROCESOW.md) |
 | prześledzić przepływ między procesami | katalog [`przeplywy/`](przeplywy/) |
 | sprawdzić wariant organizacyjny | [Modele operacyjne](mapowania/modele-operacyjne.md) |
 | zobaczyć styki i pokrycie modelu | katalog [`mapowania/`](mapowania/) |
@@ -15,11 +15,11 @@ pytania, na które chcesz odpowiedzieć:
 ## Co zawiera publiczna próbka
 
 - mapę 74 procesów w 22 obszarach oraz jednego kandydata;
-- sześć pełnych kart procesów z obszarów oferty handlowej i realizacji sprzedaży;
+- katalog wszystkich 74 kart: sześć pełnych przykładów i 68 publicznych skrótów;
 - dziesięć opisów przepływów oraz mapowania i przykładowe profile;
 - dwa szablony: skróconej karty standardowej i karty pogłębionej.
 
-Pozostałe opracowane karty oraz Regulatory Matrix nie są częścią publicznego repozytorium.
+Pełne wersje pozostałych 68 kart oraz Regulatory Matrix nie są częścią publicznego repozytorium.
 Informacja o pełnym zakresie i kontakt znajdują się w [głównym README](../README.md).
 
 ## Notacja

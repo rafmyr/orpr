@@ -6,6 +6,8 @@ Obejmuje 74 procesy w 22 obszarach oraz jednego kandydata bez nadanego identyfik
 To jest warstwa nawigacyjna: spis obszarów i procesów, a nie diagram kolejności wykonania.
 Przekazania między procesami, bramki i wywołania procesów przekrojowych są opisane w kartach oraz
 w [`rejestrze styków L0`](mapowania/rejestr-stykow-L0.md).
+Pełne karty i publiczne skróty wszystkich pozycji znajdziesz w
+[`katalogu 74 kart procesów`](KARTY-PROCESOW.md).
 
 Notacja identyfikatorów jest zamrożona od `v0.1.0`. Kody domen, takie jak `CAT` i `SAL`, są częścią
 stabilnego identyfikatora technicznego; obszary poniżej służą do nawigacji biznesowej.
