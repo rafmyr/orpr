@@ -7,6 +7,7 @@ pytania, na które chcesz odpowiedzieć:
 |---|---|
 | zobaczyć cały krajobraz procesów | [Mapa 74 procesów](mapa-procesow.md) |
 | znaleźć pełną kartę albo publiczny skrót | [Katalog 74 kart](KARTY-PROCESOW.md) |
+| porównać procesy między modelami sieci | [Macierz profili w CSV](dane/profile-procesow-retail.csv) |
 | prześledzić przepływ między procesami | katalog [`przeplywy/`](przeplywy/) |
 | sprawdzić wariant organizacyjny | [Modele operacyjne](mapowania/modele-operacyjne.md) |
 | zobaczyć styki i pokrycie modelu | katalog [`mapowania/`](mapowania/) |
@@ -21,6 +22,18 @@ pytania, na które chcesz odpowiedzieć:
 
 Pełne wersje pozostałych 68 kart oraz Regulatory Matrix nie są częścią publicznego repozytorium.
 Informacja o pełnym zakresie i kontakt znajdują się w [głównym README](../README.md).
+
+## Profile procesów według modelu sieci
+
+Plik [`dane/profile-procesow-retail.csv`](dane/profile-procesow-retail.csv) łączy 74 procesy z
+sześcioma modelami: od sklepu niezależnego do sieci własnej. Każda z 444 kombinacji ma status
+`WYSTĘPUJE`, `OPCJONALNY` albo `NIE_WYSTĘPUJE`. Kolumna `kolejnosc_modelu` może bezpośrednio
+zasilać suwak w interfejsie, ale kolejność nie oznacza, że firma musi przejść przez wszystkie
+modele. Kolumna `klasa_zrodlowa` zachowuje ślad klasyfikacji użytej do wyprowadzenia statusu.
+Reguła translacji jest jawna: `WYMAGANE` → `WYSTĘPUJE`, `ZAKRES` → `OPCJONALNY`,
+`NIEDOP-OBOW` → `NIE_WYSTĘPUJE`. Dla `DEM-02` właściciel standardu rozstrzygnął 4.09.2026,
+że proces jest opcjonalny we wszystkich sześciu modelach; źródłowe `NIEPRZYPISANE` pozostaje
+w CSV widoczne jako ślad wcześniejszego stanu.
 
 ## Notacja
 
