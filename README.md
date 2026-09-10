@@ -33,7 +33,8 @@ prywatnej zawartości Regulatory Matrix ani historii prywatnego repozytorium.
 2. [Opis standardu i notacji](standard/README.md)
 3. [Znane ograniczenia](ZNANE-OGRANICZENIA.md)
 4. [Rejestr opublikowanych kart](standard/KARTY-PROCESOW.md)
-5. [Pytania, pomysły i przykłady zastosowań](https://github.com/rafmyr/orpr/discussions)
+5. [Czym jest Regulatory Matrix](REGULATORY-MATRIX.md)
+6. [Pytania, pomysły i przykłady zastosowań](https://github.com/rafmyr/orpr/discussions)
 
 Seria `v0.1.x` jest wydaniem wczesnym. Mapa procesu nie zastępuje analizy konkretnej organizacji,
 a materiał nie stanowi porady prawnej, podatkowej ani księgowej.
