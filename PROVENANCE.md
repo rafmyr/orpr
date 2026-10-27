@@ -22,3 +22,10 @@ lines stay in preparation outside this repository.
 
 `MANIFEST.sha256` regenerated: new file added, `README.md` hash refreshed (README was edited on
 2026-09-04 after the manifest had been written).
+
+## Update 2026-10-27 (2)
+
+Added `standard/mapowania/kto-decyduje.md`: the "Kto może wykonać punkt decyzyjny" information layer,
+version 0.1, pilot release (58 decision points in 8 processes of the margin chain, verified by the
+author). Derived from the private working layer by the author's decision of 2026-10-27.
+`MANIFEST.sha256` regenerated.
