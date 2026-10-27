@@ -19,13 +19,12 @@ Zasady stałe: odpowiedzialność za wynik zawsze przy nazwanej roli ludzkiej, n
 
 Razem: **58 punktów**; C 11, R 27, A1 19, A2 1.
 
-## Otwarte granice
+## Granice między kartami
 
-Dwie decyzje opisują dziś dwie karty. Która karta rozstrzyga, a która tylko konsumuje wynik, pozostaje otwarte:
+Dwie decyzje opisują dwie karty. Rozstrzygnięcie autora (2026-10-27):
 
-- spełnienie warunku korzyści od dostawcy: `DP-CAT-04-6` i `DP-PRC-04-1` (PRC-04 sama pyta o to w B6); dla świadczeń niepieniężnych reguła nie wystarcza ;
-- przypisanie korzyści do producenta, pozycji i okresu: `DP-PRC-04-6` i `DP-SUP-02-5` (PRC-04 N11, SUP-02 N7).
-
+- spełnienie warunku korzyści od dostawcy rozstrzyga `DP-PRC-04-1` (PRC-04); `DP-CAT-04-6` (CAT-04) dostarcza dowód efektu akcji i nie zamyka tej decyzji;
+- przypisanie korzyści do producenta, pozycji i okresu rozstrzyga `DP-PRC-04-6` (PRC-04); `DP-SUP-02-5` (SUP-02) korzysta z tego przypisania przy rozliczeniu.
 
 ## CAT-02
 
